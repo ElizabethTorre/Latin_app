@@ -1,0 +1,84 @@
+// @import url('https//fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet')
+@import "global"
+.body
+	display flex
+	width 100%
+	position relative
+.NavLateral
+	//border 1px solid
+	position absolute
+	min-height 100vh
+	z-index 3
+	background white
+	top 0
+	bottom 0
+.open-close
+	padding 1rem 2.2rem
+	width 200px
+	text-align right
+	margin auto
+	#openLeft
+	#openRight
+		color $pink
+		font-size 1.3rem
+		&:hover
+			color $blue
+.sidenavbar
+	width 200px
+
+.content-items
+	width 170px
+	margin auto
+	.item-flex
+		display flex
+		justify-content space-between
+		align-items center
+		padding 1rem 1.2rem
+		color $text-color
+		&:hover
+			background-color #3c3c3c
+			color $gray-claro
+			transition-duration 1s
+		p
+			margin 0
+			font 12px 400 auto
+		img
+			width 1.5rem
+.ContentNav
+	margin 0
+	width 100%
+	background-color #f1f1f1
+	.divContent
+		background-color black
+		border-radius 5px
+		margin 10px
+.none
+	display none
+.widthAuto
+	width auto
+.classWidth
+	width 65px
+	transition 0.75s
+.widthButton
+	width unset
+	text-align center
+	padding 1rem
+.marginLeft
+	margin-left 65px
+
+.classGrey
+	position absolute
+	background-color rgba(0,0,0,.5)
+	min-height 100vh
+	width 100%
+	z-index 2
+	top 0
+	bottom 0
+
+@media screen and (min-width: 993px)
+	.NavLateral
+		position inherit
+	.classGrey
+		display none
+	.ContentNav
+		margin 0
