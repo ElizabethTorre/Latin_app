@@ -4,7 +4,6 @@
 		.container-body
 			sideNav
 		//-button#up.hiden(@click="up") subir
-		//-mdb-icon(icon="eye" class="mr-1")
 
 </template>
 

@@ -1,39 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet')
 @import "global"
 .flex
-	display flex
-	align-items center
-	flex-direction column
+	flex column center unset unset
 .content-top
 	align-self flex-start
 	margin 0 2rem
 	.title-top
-		font-size 1.15rem
+		font 1.15rem 700 $pink
+		letter-spacing 0.05rem		
 		padding 1.5rem 0
-		color $pink
-		font-weight 700
-		letter-spacing 0.05rem
 		span
 			color $gray-claro
 .content-bottom
 	width 100%
-	display flex
-	align-items center
+	flex unset center center unset
 	flex-wrap wrap
-	justify-content center
 	.card
 		width 12rem
 		margin 0 0.5rem 1.5rem .5rem
 		border 1px solid #1a1a1a
 		border-radius 0.25rem
 		.img-fluid
-			width 100%
-			height 18rem
+			area 100% 18rem
 			object-fit fill
 	.card-body
-		display flex
-		justify-content space-between
-		flex-direction column
+		flex column normal space-between unset
 		height 11.5rem
 		background-color #1a1a1a
 		.card-title
@@ -61,16 +51,13 @@
 	.see-btn
 		margin 0
 		box-shadow none
-		border-radius 3px
+		button(#2c2c2c !important, 3px, .55rem .75rem)
 		justify-content center
 		text-transform none
-		background-color #2c2c2c !important
-		color $blue
-		font-size 14px
-		font-weight 500
+		font 14px 500 $blue
 		letter-spacing 0.02rem
 		line-height 1.25rem
-		padding .55rem .75rem
+		
 		&:hover
 			background-color #3c3c3c !important
 		i

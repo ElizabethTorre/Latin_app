@@ -1,11 +1,9 @@
-// @import url('https//fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet')
 @import "global"
 .body
 	display flex
 	width 100%
 	position relative
 .NavLateral
-	//border 1px solid
 	position absolute
 	min-height 100vh
 	z-index 3
@@ -19,6 +17,7 @@
 	margin auto
 	#openLeft
 	#openRight
+		cursor pointer
 		color $pink
 		font-size 1.3rem
 		&:hover
@@ -30,9 +29,8 @@
 	width 170px
 	margin auto
 	.item-flex
-		display flex
-		justify-content space-between
-		align-items center
+		cursor pointer
+		flex unset center space-between center
 		padding 1rem 1.2rem
 		color $text-color
 		&:hover
