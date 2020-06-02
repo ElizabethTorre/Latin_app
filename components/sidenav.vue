@@ -6,34 +6,34 @@
 			mdb-icon#openRight.none(icon="chevron-circle-right")
 		.sidenavbar
 			.content-items
-				.item-flex(@click="parraf=''")
+				.item-flex.active(@click="selectCountry('')")
 					p Todos
 					img(src="https://img.icons8.com/color/48/000000/america.png" alt="Imagen de America")
-				.item-flex(@click="parraf='Peru'")
-					p Perú
+				.item-flex(@click="selectCountry('Peru')")
+					p Peru
 					img(src="https://img.icons8.com/color/48/000000/peru.png" alt="Bandera de Peru")
-				.item-flex(@click="parraf='Colombia'")
+				.item-flex(@click="selectCountry('Colombia')")
 					p Colombia
 					img(src="https://img.icons8.com/color/48/000000/colombia.png" alt="Bandera de Colombia")
-				.item-flex(@click="parraf='Brazil'")
-					p Brasil
+				.item-flex(@click="selectCountry('Brazil')")
+					p Brazil
 					img(src="https://img.icons8.com/color/48/000000/brazil.png" alt="Bandera de Brazil")
-				.item-flex(@click="parraf='Chile'")
+				.item-flex(@click="selectCountry('Chile')")
 					p Chile
 					img(src="https://img.icons8.com/color/48/000000/chile.png" alt="Bandera de Chile")
-				.item-flex(@click="parraf='Argentina'")
+				.item-flex(@click="selectCountry('Argentina')")
 					p Argentina
 					img(src="https://img.icons8.com/color/48/000000/argentina.png" alt="Bandera de Argentina")
-				.item-flex(@click="parraf='Mexico'")
-					p México
+				.item-flex(@click="selectCountry('Mexico')")
+					p Mexico
 					img(src="https://img.icons8.com/color/48/000000/mexico.png" alt="Bandera de Mexico")
-				.item-flex(@click="parraf='Venezuela'")
+				.item-flex(@click="selectCountry('Venezuela')")
 					p Venezuela
 					img(src="https://img.icons8.com/color/48/000000/venezuela.png" alt="Bandera de Venezuela")
 	div.classGrey
 	.ContentNav
 		.divContent
-			movies(:type = "parraf" :mov="arr_peliculas")
+			movies(:type = "country" :mov="arr_peliculas")
 
 </template>
 <script>
@@ -48,7 +48,7 @@ export default {
 	},
 	data() {
 		return {
-			parraf:"",
+			country:"",
 			peliculas: [
 				'Locos de amor 2',
 				'La casa rosada',
@@ -121,6 +121,31 @@ export default {
 			const x = document.querySelectorAll(".item-flex> p");
 				for (let i = 0; i < x.length; i++)
 					x[i].classList.toggle("none");
+		},
+		selectCountry(country) {
+			this.country = country;
+			document.querySelector("#openRight").classList.remove("none");
+			document.querySelector("#openLeft").classList.add("none");
+			document.querySelector(".NavLateral").classList.add("classWidth");
+			document.querySelector(".sidenavbar").classList.add("widthAuto");
+			document.querySelector(".content-items").classList.add("widthAuto");
+			document.querySelector(".open-close").classList.add("widthButton");
+			document.querySelector(".classGrey").classList.add("none");
+			document.querySelector(".ContentNav").classList.add("marginLeft");
+			
+			const x = document.querySelectorAll(".item-flex> p");
+				for (let i = 0; i < x.length; i++) {
+					x[i].classList.add("none");
+					if(country === '' && x[i].textContent === 'Todos') {
+						x[i].parentElement.classList.add("active");
+					} else {
+						if(x[i].textContent === country) {
+							x[i].parentElement.classList.add("active");
+						}
+						else
+							x[i].parentElement.classList.remove("active");
+					}
+				}
 		}
 	}
 }
